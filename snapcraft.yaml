@@ -1,22 +1,18 @@
-name: snappyv44
-version: 4.4.0
-summary: A generic amd64 kernel built from source
-description: This is a generic kernel for amd64 / kvm built using x86_64_defconfig plus the minimal snappy config changes
+name: snappyv41
+version: 4.1.15
+summary: Linux kernel for i.MX6
+description: This is a generic kernel for i.MX6 built using imx_7_defconfig plus the minimal snappy config changes
 type: kernel
 
 parts:
   kernel:
     plugin: kernel
     source: .
-    source-branch: stable-4.4.y
+    source-branch: imx_4.1.15_2.0.0_snappy
     source-type: git
-    kdefconfig: [x86_64_defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
+    kdefconfig: [imx_v7_adv_defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
     kconfigs:
-      - CONFIG_LOCALVERSION="-stable-4.4.y"
+      - CONFIG_LOCALVERSION="-imx-4.1.15"
     kernel-initrd-modules:
       - squashfs
-    kernel-initrd-firmware:
-      - lib/firmware/e100/d101m_ucode.bin
-      - lib/firmware/e100/d101s_ucode.bin
-      - lib/firmware/e100/d102e_ucode.bin
     kernel-image-target: bzImage
