@@ -1,4 +1,4 @@
-name: snappyv41
+name: advantech
 version: 4.1.15
 summary: Linux kernel for i.MX6
 description: This is a generic kernel for i.MX6 built using imx_7_defconfig plus the minimal snappy config changes
@@ -12,7 +12,7 @@ parts:
     source-type: git
     kdefconfig: [imx_v7_adv_defconfig, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
     kconfigs:
-      - CONFIG_LOCALVERSION="-imx-4.1.15"
+      - CONFIG_LOCALVERSION="-imx6-4.1.15"
     kernel-initrd-modules:
       - squashfs
-    kernel-image-target: bzImage
+    kernel-image-target: zImage
