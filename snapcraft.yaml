@@ -16,3 +16,4 @@ parts:
     kernel-initrd-modules:
       - squashfs
     kernel-image-target: zImage
+    build-packages: [bc, lzop, cpio, kmod]
