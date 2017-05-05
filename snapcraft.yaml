@@ -12,6 +12,9 @@ parts:
     kdefconfig: [imx_v7_adv_defconfig, ubuntu/config.common.ubuntu.config, ubuntu/config.common.armhf.config, snappy/generic.config, snappy/security.config, snappy/systemd.config, snappy/snappy.config, snappy/containers.config]
     kconfigs:
       - CONFIG_LOCALVERSION="-imx6"
+      - CONFIG_SOC_IMX6UL=n
+      - CONFIG_BACKLIGHT_PWM=y
+      - CONFIG_KEYBOARD_GPIO=y
     kernel-initrd-modules:
       - squashfs
     kernel-image-target: zImage
